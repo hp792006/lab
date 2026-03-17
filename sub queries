@@ -1,0 +1,16 @@
+CREATE TABLE EX6(
+id NUMBER,
+fname VARCHAR2(15),
+lname VARCHAR2(15),
+salary NUMBER
+);
+
+INSERT INTO EX6 VALUES(1,'deepika','balu',70000);
+INSERT INTO EX6 VALUES(2,'madhu','hasini',70000);
+INSERT INTO EX6 VALUES(3,'jeen','mersaline',100000);
+INSERT INTO EX6 VALUES(4,'nandhini','mam',60000);
+
+SELECT fname||' '||lname, salary
+FROM EX6
+WHERE salary >
+(SELECT AVG(salary) FROM EX6);
