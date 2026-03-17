@@ -1,0 +1,21 @@
+SET SERVEROUTPUT ON;
+
+CREATE TABLE test(
+id NUMBER,
+name VARCHAR2(20)
+);
+
+INSERT INTO test VALUES(1,'Arun');
+
+DECLARE
+   temp VARCHAR2(20);
+BEGIN
+   SELECT name INTO temp
+   FROM test
+   WHERE id = 5;
+
+EXCEPTION
+   WHEN NO_DATA_FOUND THEN
+   DBMS_OUTPUT.PUT_LINE('No data found');
+END;
+/
