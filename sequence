@@ -1,0 +1,23 @@
+-- Sequence
+
+CREATE SEQUENCE seq1
+START WITH 1
+INCREMENT BY 1;
+
+SELECT seq1.NEXTVAL FROM dual;
+
+-- View
+
+CREATE TABLE Student(
+id INT,
+name VARCHAR(20),
+marks INT
+);
+
+INSERT INTO Student VALUES(1,'Arun',80);
+INSERT INTO Student VALUES(2,'Ravi',90);
+
+CREATE VIEW stud_view AS
+SELECT name, marks FROM Student;
+
+SELECT * FROM stud_view;
