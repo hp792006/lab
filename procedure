@@ -1,0 +1,21 @@
+SET SERVEROUTPUT ON;
+
+DECLARE
+   a NUMBER := 10;
+   b NUMBER := 20;
+   c NUMBER;
+
+PROCEDURE findMin(x IN NUMBER, y IN NUMBER, z OUT NUMBER) IS
+BEGIN
+   IF x < y THEN
+      z := x;
+   ELSE
+      z := y;
+   END IF;
+END;
+
+BEGIN
+   findMin(a, b, c);
+   DBMS_OUTPUT.PUT_LINE('Minimum value = ' || c);
+END;
+/
