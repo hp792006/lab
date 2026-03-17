@@ -1,0 +1,32 @@
+CREATE TABLE Ex3(
+item_id INTEGER,
+item_name VARCHAR(30),
+checkin_date DATE,
+item_price NUMBER(10,3),
+branch_name VARCHAR(200),
+consumer_name VARCHAR(20),
+place VARCHAR(20)
+);
+
+INSERT INTO Ex3 VALUES(12101,'MacBook',TO_DATE('2023-07-28','YYYY-MM-DD'),350000,'Apple Store','RAJA','London');
+INSERT INTO Ex3 VALUES(12102,'Watch',TO_DATE('2024-02-20','YYYY-MM-DD'),4000,'Titan','Vijay','London');
+INSERT INTO Ex3 VALUES(12103,'Book',TO_DATE('2024-03-11','YYYY-MM-DD'),500,'Tamil Store','Ajith','India');
+
+SELECT * FROM Ex3;
+
+-- String
+SELECT UPPER(item_name) FROM Ex3;
+SELECT INITCAP(item_name) FROM Ex3;
+SELECT TRIM(BOTH 'e' FROM item_name) FROM Ex3;
+
+-- Date
+SELECT ADD_MONTHS(TO_DATE('2024-02-20','YYYY-MM-DD'),3) FROM dual;
+SELECT LAST_DAY(TO_DATE('2024-03-11','YYYY-MM-DD')) FROM dual;
+
+-- Number
+SELECT MAX(item_price), MIN(item_price),
+ROUND(AVG(item_price),1), SUM(item_price) FROM Ex3;
+
+-- Conversion
+SELECT TO_CHAR(SYSDATE,'dd') FROM dual;
+SELECT TO_CHAR(SYSDATE,'ddth') FROM dual;
