@@ -1,0 +1,26 @@
+CREATE TABLE department(
+deptid NUMBER(2) PRIMARY KEY,
+deptname VARCHAR(20),
+location VARCHAR(10)
+);
+
+INSERT INTO department VALUES(1,'cs','cbe');
+INSERT INTO department VALUES(2,'cs','cbe');
+INSERT INTO department VALUES(3,'it','che');
+INSERT INTO department VALUES(4,'ct','erd');
+
+CREATE TABLE employees(
+empid NUMBER(4) PRIMARY KEY,
+empname VARCHAR(10),
+deptid NUMBER(2)
+);
+
+INSERT INTO employees VALUES(101,'aa',1);
+INSERT INTO employees VALUES(102,'bb',2);
+INSERT INTO employees VALUES(103,'cc',1);
+INSERT INTO employees VALUES(104,'dd',3);
+
+SELECT d.deptname, e.empname
+FROM department d
+JOIN employees e
+ON d.deptid = e.deptid;
